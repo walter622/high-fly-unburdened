@@ -1,16 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/sections/HeroSection";
+import IdentificationSection from "@/components/sections/IdentificationSection";
+import BigIdeaSection from "@/components/sections/BigIdeaSection";
+import WhatIsSection from "@/components/sections/WhatIsSection";
+import TransformationSection from "@/components/sections/TransformationSection";
+import FitSection from "@/components/sections/FitSection";
+import ComparisonSection from "@/components/sections/ComparisonSection";
+import MethodologySection from "@/components/sections/MethodologySection";
+import DeliverablesSection from "@/components/sections/DeliverablesSection";
+import DifferentialSection from "@/components/sections/DifferentialSection";
+import AuthoritySection from "@/components/sections/AuthoritySection";
+import ForWhoSection from "@/components/sections/ForWhoSection";
+import AboutSection from "@/components/sections/AboutSection";
+import CtaSection from "@/components/sections/CtaSection";
+import FaqSection from "@/components/sections/FaqSection";
+import FinalCtaSection from "@/components/sections/FinalCtaSection";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
-};
-
-const Index = PlaceholderIndex;
+const Index = () => (
+  <main className="overflow-x-hidden">
+    <HeroSection />
+    <IdentificationSection />
+    <BigIdeaSection />
+    <WhatIsSection />
+    <TransformationSection />
+    <FitSection />
+    <ComparisonSection />
+    <MethodologySection />
+    <DeliverablesSection />
+    <DifferentialSection />
+    <AuthoritySection />
+    <ForWhoSection />
+    <AboutSection />
+    <CtaSection />
+    <FaqSection />
+    <FinalCtaSection />
+  </main>
+);
 
 export default Index;
