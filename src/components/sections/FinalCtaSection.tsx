@@ -12,7 +12,7 @@ const FinalCtaSection = () => (
     <div className="container max-w-3xl mx-auto px-6 text-center">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-3xl md:text-lg font-medium leading-tight mb-10 text-section-dark-foreground">
+        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-10 text-section-dark-foreground">
           Chegou a hora de crescer{" "}
           <span className="gold-gradient-text italic">sem se perder no processo</span>
         </h2>
