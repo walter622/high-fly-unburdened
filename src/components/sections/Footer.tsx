@@ -9,7 +9,7 @@ const Footer = () => (
           <img
             src={logo}
             alt="PresenteMente Corporativo"
-            className="h-24 w-auto mb-4 brightness-0 invert"
+            className="h-48 md:h-56 w-auto mb-4 brightness-0 invert"
           />
           <p className="text-hero-muted/70 text-base font-body tracking-wide max-w-xs text-center md:text-left">
             Mentoria premium para mulheres executivas que querem alta performance sem exaustão.
