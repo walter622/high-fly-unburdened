@@ -29,7 +29,15 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-hero-muted/15 text-center">
+      <div className="mt-12 pt-8 border-t border-hero-muted/15 text-center space-y-3">
+        <a
+          href="https://omniadigital.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-hero-muted/40 text-sm font-body tracking-wide hover:text-gold transition-colors"
+        >
+          Desenvolvido por Omnia Digital
+        </a>
         <p className="text-hero-muted/50 text-sm font-body tracking-wide">
           © {new Date().getFullYear()} PresenteMente Corporativo. Todos os direitos reservados.
         </p>
