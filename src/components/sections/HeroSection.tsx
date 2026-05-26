@@ -19,7 +19,7 @@ const HeroSection = () => (
             <img
               src={logo}
               alt="PresenteMente Corporativo"
-              className="h-48 md:h-56 lg:h-64 w-auto mb-8 mx-auto lg:mx-0 brightness-0 invert"
+              className="h-72 md:h-80 lg:h-96 w-auto mb-8 mx-auto lg:mx-0 brightness-0 invert"
             />
 
             <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.05] mb-8">
