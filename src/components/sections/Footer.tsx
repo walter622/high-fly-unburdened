@@ -11,26 +11,26 @@ const Footer = () => (
             alt="PresenteMente Corporativo"
             className="h-24 w-auto mb-4 brightness-0 invert"
           />
-          <p className="text-hero-muted/70 text-sm font-body tracking-wide max-w-xs text-center md:text-left">
+          <p className="text-hero-muted/70 text-base font-body tracking-wide max-w-xs text-center md:text-left">
             Mentoria premium para mulheres executivas que querem alta performance sem exaustão.
           </p>
         </div>
 
         <div className="text-center md:text-right">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold mb-3 font-body">Contato</p>
+          <p className="text-sm uppercase tracking-[0.3em] text-gold mb-3 font-body">Contato</p>
           <a
             href="tel:+5511993568491"
-            className="inline-flex items-center gap-2 text-hero-foreground hover:text-gold transition-colors font-body text-lg"
+            className="inline-flex items-center gap-2 text-hero-foreground hover:text-gold transition-colors font-body text-xl"
           >
             <Phone className="w-4 h-4" />
             (11) 9.9356-8491
           </a>
-          <p className="text-hero-muted/60 text-xs mt-2 font-body">Edgard Gonçalves</p>
+          <p className="text-hero-muted/60 text-sm mt-2 font-body">Edgard Gonçalves</p>
         </div>
       </div>
 
       <div className="mt-12 pt-8 border-t border-hero-muted/15 text-center">
-        <p className="text-hero-muted/50 text-xs font-body tracking-wide">
+        <p className="text-hero-muted/50 text-sm font-body tracking-wide">
           © {new Date().getFullYear()} PresenteMente Corporativo. Todos os direitos reservados.
         </p>
       </div>

@@ -33,7 +33,7 @@ const ForWhoSection = () => (
         <div className="lg:col-span-7 order-2 lg:order-1">
           <motion.div {...fadeIn}>
             <div className="divider-gold-left mb-8" />
-            <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-12">
+            <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-12">
               Para quem o PresenteMente é —{" "}
               <span className="gold-text italic">e para quem não é</span>
             </h2>
@@ -46,13 +46,13 @@ const ForWhoSection = () => (
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="font-display text-xl gold-text mb-6 flex items-center gap-2">
-                <span className="text-2xl">✦</span> É para:
+              <h3 className="font-display text-3xl gold-text mb-6 flex items-center gap-2">
+                <span className="text-4xl">✦</span> É para:
               </h3>
               <div className="space-y-4">
                 {forItems.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <span className="text-gold mt-1.5 text-xs">●</span>
+                    <span className="text-gold mt-1.5 text-sm">●</span>
                     <span className="text-foreground font-body">{item}</span>
                   </div>
                 ))}
@@ -65,13 +65,13 @@ const ForWhoSection = () => (
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              <h3 className="font-display text-xl text-muted-foreground mb-6 flex items-center gap-2">
-                <span className="text-2xl">—</span> Não é para:
+              <h3 className="font-display text-3xl text-muted-foreground mb-6 flex items-center gap-2">
+                <span className="text-4xl">—</span> Não é para:
               </h3>
               <div className="space-y-4">
                 {notForItems.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <span className="text-muted-foreground/50 mt-1.5 text-xs">●</span>
+                    <span className="text-muted-foreground/50 mt-1.5 text-sm">●</span>
                     <span className="text-muted-foreground font-body">{item}</span>
                   </div>
                 ))}
@@ -100,7 +100,7 @@ const ForWhoSection = () => (
             </div>
             <div className="mt-6 pr-1 text-right">
               <div className="divider-gold-left mb-3 ml-auto" />
-              <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground font-body">
+              <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground font-body">
                 Ambição · Clareza · Equilíbrio
               </p>
             </div>

@@ -22,16 +22,16 @@ const HeroSection = () => (
               className="h-24 md:h-28 w-auto mb-8 mx-auto lg:mx-0 brightness-0 invert"
             />
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.05] mb-8">
+            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.05] mb-8">
               Alta Performance sem Exaustão
-              <span className="block mt-4 text-2xl md:text-3xl lg:text-4xl text-hero-muted font-light italic leading-snug">
+              <span className="block mt-4 text-4xl md:text-5xl lg:text-6xl text-hero-muted font-light italic leading-snug">
                 A Mentoria para Mulheres Executivas que Querem Crescer com Clareza, Poder e Equilíbrio
               </span>
             </h1>
           </motion.div>
 
           <motion.p
-            className="text-hero-muted text-lg md:text-xl leading-relaxed mb-6 font-body font-light"
+            className="text-hero-muted text-xl md:text-3xl leading-relaxed mb-6 font-body font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
@@ -51,7 +51,7 @@ const HeroSection = () => (
           </motion.div>
 
           <motion.div
-            className="flex flex-col md:flex-row md:flex-wrap items-center lg:items-start lg:justify-start justify-center gap-x-6 gap-y-3 text-sm text-hero-muted/70 font-body tracking-wide"
+            className="flex flex-col md:flex-row md:flex-wrap items-center lg:items-start lg:justify-start justify-center gap-x-6 gap-y-3 text-base text-hero-muted/70 font-body tracking-wide"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
@@ -79,7 +79,7 @@ const HeroSection = () => (
               />
               <div className="absolute inset-0 bg-gradient-to-t from-hero-bg/50 via-transparent to-transparent pointer-events-none" />
             </div>
-            <p className="mt-4 text-xs uppercase tracking-[0.3em] text-hero-muted/70 font-body text-center lg:text-left">
+            <p className="mt-4 text-sm uppercase tracking-[0.3em] text-hero-muted/70 font-body text-center lg:text-left">
               Edgard Gonçalves · Mentor & Fundador
             </p>
           </div>

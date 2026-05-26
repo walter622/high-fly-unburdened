@@ -12,13 +12,13 @@ const FinalCtaSection = () => (
     <div className="container max-w-3xl mx-auto px-6 text-center">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-3xl md:text-5xl font-medium leading-tight mb-10 text-section-dark-foreground">
+        <h2 className="font-display text-5xl md:text-7xl font-medium leading-tight mb-10 text-section-dark-foreground">
           Chegou a hora de crescer{" "}
           <span className="gold-gradient-text italic">sem se perder no processo</span>
         </h2>
       </motion.div>
 
-      <motion.div className="space-y-4 mb-12 text-section-dark-foreground/80 text-lg font-body font-light leading-relaxed" {...fadeIn}>
+      <motion.div className="space-y-4 mb-12 text-section-dark-foreground/80 text-xl font-body font-light leading-relaxed" {...fadeIn}>
         <p>Você não precisa abrir mão da sua ambição.</p>
         <p>Não precisa diminuir sua potência.</p>
         <p>Não precisa escolher entre autoridade e equilíbrio.</p>
@@ -36,7 +36,7 @@ const FinalCtaSection = () => (
         </a>
       </motion.div>
 
-      <motion.p className="text-section-dark-foreground/40 text-sm font-body tracking-wide" {...fadeIn}>
+      <motion.p className="text-section-dark-foreground/40 text-base font-body tracking-wide" {...fadeIn}>
         Mentoria premium com Edgard Gonçalves para mulheres executivas que querem alta performance sem exaustão
       </motion.p>
     </div>
