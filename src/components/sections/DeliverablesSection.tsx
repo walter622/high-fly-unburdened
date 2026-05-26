@@ -41,7 +41,7 @@ const DeliverablesSection = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
           >
-            <span className="gold-gradient-text font-display text-lg font-bold opacity-50">
+            <span className="gold-gradient-text font-display text-2xl font-bold opacity-50">
               {String(i + 1).padStart(2, "0")}
             </span>
             <span className="text-foreground font-body leading-relaxed">{item}</span>

@@ -48,7 +48,7 @@ const ComparisonSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="font-display text-lg gold-text mb-6 text-center">Com o PresenteMente</h3>
+          <h3 className="font-display text-2xl gold-text mb-6 text-center">Com o PresenteMente</h3>
           <div className="space-y-4">
             {withItems.map((item, i) => (
               <div key={i} className="flex items-start gap-3">
@@ -66,7 +66,7 @@ const ComparisonSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="font-display text-lg text-muted-foreground mb-6 text-center">Sem o PresenteMente</h3>
+          <h3 className="font-display text-2xl text-muted-foreground mb-6 text-center">Sem o PresenteMente</h3>
           <div className="space-y-4">
             {withoutItems.map((item, i) => (
               <div key={i} className="flex items-start gap-3">

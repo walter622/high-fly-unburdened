@@ -46,7 +46,7 @@ const ForWhoSection = () => (
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="font-display text-lg gold-text mb-6 flex items-center gap-2">
+              <h3 className="font-display text-2xl gold-text mb-6 flex items-center gap-2">
                 <span className="text-lg">✦</span> É para:
               </h3>
               <div className="space-y-4">
@@ -65,7 +65,7 @@ const ForWhoSection = () => (
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              <h3 className="font-display text-lg text-muted-foreground mb-6 flex items-center gap-2">
+              <h3 className="font-display text-2xl text-muted-foreground mb-6 flex items-center gap-2">
                 <span className="text-lg">—</span> Não é para:
               </h3>
               <div className="space-y-4">
