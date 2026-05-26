@@ -34,7 +34,7 @@ const ComparisonSection = () => (
     <div className="container max-w-5xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-16 text-center">
+        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-16 text-center">
           O custo de continuar no automático{" "}
           <span className="gold-text italic">é alto demais</span>
         </h2>
@@ -48,7 +48,7 @@ const ComparisonSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="font-display text-3xl gold-text mb-6 text-center">Com o PresenteMente</h3>
+          <h3 className="font-display text-2xl gold-text mb-6 text-center">Com o PresenteMente</h3>
           <div className="space-y-4">
             {withItems.map((item, i) => (
               <div key={i} className="flex items-start gap-3">
@@ -66,7 +66,7 @@ const ComparisonSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="font-display text-3xl text-muted-foreground mb-6 text-center">Sem o PresenteMente</h3>
+          <h3 className="font-display text-2xl text-muted-foreground mb-6 text-center">Sem o PresenteMente</h3>
           <div className="space-y-4">
             {withoutItems.map((item, i) => (
               <div key={i} className="flex items-start gap-3">

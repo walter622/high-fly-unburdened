@@ -35,13 +35,13 @@ const MethodologySection = () => (
     <div className="container max-w-4xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-6 text-center text-section-dark-foreground">
+        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-6 text-center text-section-dark-foreground">
           O caminho para crescer{" "}
           <span className="gold-gradient-text">sem se perder no processo</span>
         </h2>
       </motion.div>
 
-      <motion.p className="text-section-dark-foreground/70 text-xl text-center mb-16 font-body font-light" {...fadeIn}>
+      <motion.p className="text-section-dark-foreground/70 text-lg text-center mb-16 font-body font-light" {...fadeIn}>
         O PresenteMente foi pensado para ajudar mulheres executivas a reorganizarem sua forma de operar por dentro, para que consigam sustentar performance, liderança e crescimento com mais clareza, equilíbrio e autoridade.
       </motion.p>
 
@@ -55,10 +55,10 @@ const MethodologySection = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.15 }}
           >
-            <span className="gold-gradient-text font-display text-6xl font-bold opacity-40 absolute top-4 right-6">
+            <span className="gold-gradient-text font-display text-2xl font-bold opacity-40 absolute top-4 right-6">
               {step.num}
             </span>
-            <h3 className="font-display text-3xl text-gold mb-3">{step.title}</h3>
+            <h3 className="font-display text-2xl text-gold mb-3">{step.title}</h3>
             <p className="text-section-dark-foreground/70 font-body font-light text-base leading-relaxed">
               {step.text}
             </p>
@@ -67,7 +67,7 @@ const MethodologySection = () => (
       </div>
 
       <motion.div className="text-center mt-16 border-t border-section-dark-foreground/10 pt-10" {...fadeIn}>
-        <p className="text-xl text-section-dark-foreground/80 font-display italic">
+        <p className="text-lg text-section-dark-foreground/80 font-display italic">
           Não se trata de desacelerar sua potência.<br />
           <span className="gold-text">Se trata de sustentar sua potência sem continuar se desgastando para isso.</span>
         </p>

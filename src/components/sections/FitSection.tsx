@@ -22,13 +22,13 @@ const FitSection = () => (
     <div className="container max-w-3xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
+        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
           O PresenteMente{" "}
           <span className="gold-gradient-text">faz sentido para você?</span>
         </h2>
       </motion.div>
 
-      <motion.p className="text-section-dark-foreground/70 text-xl leading-relaxed mb-10 text-center font-body font-light" {...fadeIn}>
+      <motion.p className="text-section-dark-foreground/70 text-lg leading-relaxed mb-10 text-center font-body font-light" {...fadeIn}>
         Essa mentoria foi criada para mulheres que já têm trajetória, responsabilidade e alto nível de exigência — mas que perceberam que continuar crescendo do mesmo jeito pode custar caro demais.
       </motion.p>
 
@@ -53,7 +53,7 @@ const FitSection = () => (
       </div>
 
       <motion.div className="text-center border-t border-section-dark-foreground/10 pt-10" {...fadeIn}>
-        <p className="text-xl text-section-dark-foreground/80 font-body font-light italic">
+        <p className="text-lg text-section-dark-foreground/80 font-body font-light italic">
           Não é para quem busca motivação superficial.<br />
           <span className="text-section-dark-foreground font-medium">É para quem busca transformação real na forma de liderar, decidir e sustentar sua própria vida.</span>
         </p>

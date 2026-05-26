@@ -12,18 +12,18 @@ const AuthoritySection = () => (
     <div className="container max-w-3xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
+        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
           Uma condução estratégica para mulheres que não querem mais viver sob o peso da{" "}
           <span className="gold-gradient-text">exaustão silenciosa</span>
         </h2>
       </motion.div>
 
-      <motion.p className="text-section-dark-foreground/70 text-xl leading-relaxed mb-8 text-center font-body font-light" {...fadeIn}>
+      <motion.p className="text-section-dark-foreground/70 text-lg leading-relaxed mb-8 text-center font-body font-light" {...fadeIn}>
         O PresenteMente nasce da experiência de Edgard Gonçalves no trabalho com desenvolvimento humano, clareza emocional e aplicação prática para contextos de alta responsabilidade.
       </motion.p>
 
       <motion.div className="mb-12" {...fadeIn}>
-        <p className="text-section-dark-foreground/80 text-xl text-center font-body mb-6">
+        <p className="text-section-dark-foreground/80 text-lg text-center font-body mb-6">
           Seu olhar é direcionado para mulheres que:
         </p>
         <div className="space-y-4 max-w-xl mx-auto">
@@ -49,7 +49,7 @@ const AuthoritySection = () => (
         </p>
       </motion.div>
 
-      <motion.p className="text-center text-3xl font-display italic text-section-dark-foreground" {...fadeIn}>
+      <motion.p className="text-center text-xl font-display italic text-section-dark-foreground" {...fadeIn}>
         Quando a mulher certa encontra a condução certa, ela não apenas melhora.{" "}
         <span className="gold-text">Ela muda o jeito de liderar a própria vida.</span>
       </motion.p>
