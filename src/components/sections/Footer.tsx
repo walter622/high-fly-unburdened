@@ -19,11 +19,11 @@ const Footer = () => (
         <div className="text-center md:text-right">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-3 font-body">Contato</p>
           <a
-            href="tel:+55119932079722"
+            href="tel:+5511932109722"
             className="inline-flex items-center gap-2 text-hero-foreground hover:text-gold transition-colors font-body text-lg"
           >
             <Phone className="w-4 h-4" />
-            (11) 99320-79722
+            (11) 93210-9722
           </a>
           <p className="text-hero-muted/60 text-sm mt-2 font-body">Edgard Gonçalves</p>
         </div>
