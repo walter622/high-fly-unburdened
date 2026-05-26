@@ -20,21 +20,21 @@ const BigIdeaSection = () => (
     <div className="container max-w-3xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
+        <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
           Você não precisa trabalhar mais para crescer.{" "}
           <span className="gold-gradient-text">Você precisa operar em outro nível.</span>
         </h2>
       </motion.div>
 
-      <motion.p className="text-section-dark-foreground/70 text-lg leading-relaxed mb-6 text-center font-body font-light" {...fadeIn}>
+      <motion.p className="text-section-dark-foreground/70 text-xl leading-relaxed mb-6 text-center font-body font-light" {...fadeIn}>
         A maior parte das mulheres em posição de liderança foi treinada para acreditar que crescer exige suportar mais pressão, carregar mais peso, aguentar mais tensão e se cobrar mais do que todo mundo.
       </motion.p>
 
-      <motion.p className="text-gold text-xl text-center font-display italic mb-8" {...fadeIn}>
+      <motion.p className="text-gold text-3xl text-center font-display italic mb-8" {...fadeIn}>
         Mas essa lógica cobra um preço alto.
       </motion.p>
 
-      <motion.p className="text-section-dark-foreground/60 text-base text-center mb-6 font-body" {...fadeIn}>
+      <motion.p className="text-section-dark-foreground/60 text-lg text-center mb-6 font-body" {...fadeIn}>
         Ela até produz resultado por um tempo. Só que também produz:
       </motion.p>
 
@@ -42,7 +42,7 @@ const BigIdeaSection = () => (
         {costs.map((cost, i) => (
           <motion.span
             key={i}
-            className="px-5 py-2.5 border border-gold/30 text-section-dark-foreground/80 rounded-sm text-sm font-body tracking-wide"
+            className="px-5 py-2.5 border border-gold/30 text-section-dark-foreground/80 rounded-sm text-base font-body tracking-wide"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -54,7 +54,7 @@ const BigIdeaSection = () => (
       </div>
 
       <motion.div className="text-center border-t border-section-dark-foreground/10 pt-10" {...fadeIn}>
-        <p className="text-lg text-section-dark-foreground/80 font-body font-light leading-relaxed">
+        <p className="text-xl text-section-dark-foreground/80 font-body font-light leading-relaxed">
           O PresenteMente nasce a partir de uma nova lógica:{" "}
           <span className="text-section-dark-foreground font-medium">
             crescer com clareza, equilíbrio emocional e autoridade, sem continuar vivendo em guerra interna para sustentar o sucesso externo.
