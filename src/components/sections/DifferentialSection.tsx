@@ -19,17 +19,17 @@ const DifferentialSection = () => (
     <div className="container max-w-3xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-lg md:text-2xl font-medium leading-tight mb-8 text-center">
+        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8 text-center">
           Por que o PresenteMente{" "}
           <span className="gold-text italic">não é "mais uma mentoria"</span>
         </h2>
       </motion.div>
 
-      <motion.p className="text-muted-foreground text-lg leading-relaxed mb-8 text-center font-body font-light" {...fadeIn}>
+      <motion.p className="text-muted-foreground text-xl leading-relaxed mb-8 text-center font-body font-light" {...fadeIn}>
         Muitas mulheres executivas já passaram por terapia, coaching, cursos e processos de desenvolvimento — e ainda assim sentem que algo continua faltando.
       </motion.p>
 
-      <motion.p className="text-foreground text-lg text-center mb-8 font-body" {...fadeIn}>
+      <motion.p className="text-foreground text-xl text-center mb-8 font-body" {...fadeIn}>
         O diferencial do PresenteMente está na integração entre:
       </motion.p>
 
@@ -59,7 +59,7 @@ const DifferentialSection = () => (
         </div>
       </motion.div>
 
-      <motion.p className="text-center text-lg font-display italic text-foreground" {...fadeIn}>
+      <motion.p className="text-center text-xl font-display italic text-foreground" {...fadeIn}>
         É uma mentoria para mulheres que precisam de{" "}
         <span className="gold-text">profundidade com clareza</span>, e não de mais ruído.
       </motion.p>

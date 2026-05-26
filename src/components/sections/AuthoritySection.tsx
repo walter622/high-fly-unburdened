@@ -12,7 +12,7 @@ const AuthoritySection = () => (
     <div className="container max-w-3xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-lg md:text-2xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
+        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
           Uma condução estratégica para mulheres que não querem mais viver sob o peso da{" "}
           <span className="gold-gradient-text">exaustão silenciosa</span>
         </h2>
@@ -49,7 +49,7 @@ const AuthoritySection = () => (
         </p>
       </motion.div>
 
-      <motion.p className="text-center text-lg font-display italic text-section-dark-foreground" {...fadeIn}>
+      <motion.p className="text-center text-xl font-display italic text-section-dark-foreground" {...fadeIn}>
         Quando a mulher certa encontra a condução certa, ela não apenas melhora.{" "}
         <span className="gold-text">Ela muda o jeito de liderar a própria vida.</span>
       </motion.p>

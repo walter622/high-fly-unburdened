@@ -21,13 +21,13 @@ const DeliverablesSection = () => (
     <div className="container max-w-3xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-lg md:text-2xl font-medium leading-tight mb-8 text-center">
+        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8 text-center">
           O que você recebe{" "}
           <span className="gold-text italic">no PresenteMente</span>
         </h2>
       </motion.div>
 
-      <motion.p className="text-muted-foreground text-lg text-center mb-12 font-body font-light" {...fadeIn}>
+      <motion.p className="text-muted-foreground text-xl text-center mb-12 font-body font-light" {...fadeIn}>
         Ao entrar no PresenteMente, você terá acesso a uma experiência de acompanhamento premium pensada para gerar profundidade, clareza e aplicação real.
       </motion.p>
 

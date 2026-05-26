@@ -12,7 +12,7 @@ const CtaSection = () => (
     <div className="container max-w-3xl mx-auto px-6 text-center">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-lg md:text-2xl font-medium leading-tight mb-8 text-section-dark-foreground">
+        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8 text-section-dark-foreground">
           Se você sente que chegou longe, mas não quer continuar pagando caro demais por isso,{" "}
           <span className="gold-gradient-text">o PresenteMente pode ser seu próximo passo</span>
         </h2>

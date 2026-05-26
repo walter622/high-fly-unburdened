@@ -33,7 +33,7 @@ const ForWhoSection = () => (
         <div className="lg:col-span-7 order-2 lg:order-1">
           <motion.div {...fadeIn}>
             <div className="divider-gold-left mb-8" />
-            <h2 className="font-display text-lg md:text-2xl font-medium leading-tight mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-12">
               Para quem o PresenteMente é —{" "}
               <span className="gold-text italic">e para quem não é</span>
             </h2>
