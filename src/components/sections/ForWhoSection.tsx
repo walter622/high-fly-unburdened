@@ -33,7 +33,7 @@ const ForWhoSection = () => (
         <div className="lg:col-span-7 order-2 lg:order-1">
           <motion.div {...fadeIn}>
             <div className="divider-gold-left mb-8" />
-            <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-12">
+            <h2 className="font-display text-lg md:text-2xl font-medium leading-tight mb-12">
               Para quem o PresenteMente é —{" "}
               <span className="gold-text italic">e para quem não é</span>
             </h2>
@@ -46,8 +46,8 @@ const ForWhoSection = () => (
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="font-display text-3xl gold-text mb-6 flex items-center gap-2">
-                <span className="text-4xl">✦</span> É para:
+              <h3 className="font-display text-lg gold-text mb-6 flex items-center gap-2">
+                <span className="text-2xl">✦</span> É para:
               </h3>
               <div className="space-y-4">
                 {forItems.map((item, i) => (
@@ -65,8 +65,8 @@ const ForWhoSection = () => (
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              <h3 className="font-display text-3xl text-muted-foreground mb-6 flex items-center gap-2">
-                <span className="text-4xl">—</span> Não é para:
+              <h3 className="font-display text-lg text-muted-foreground mb-6 flex items-center gap-2">
+                <span className="text-2xl">—</span> Não é para:
               </h3>
               <div className="space-y-4">
                 {notForItems.map((item, i) => (

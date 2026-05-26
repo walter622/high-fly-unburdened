@@ -26,13 +26,13 @@ const TransformationSection = () => (
     <div className="container max-w-3xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-8 text-center">
+        <h2 className="font-display text-lg md:text-2xl font-medium leading-tight mb-8 text-center">
           O que muda quando você para de liderar no limite e{" "}
           <span className="gold-text italic">começa a operar com clareza</span>
         </h2>
       </motion.div>
 
-      <motion.p className="text-muted-foreground text-xl text-center mb-10 font-body font-light" {...fadeIn}>
+      <motion.p className="text-muted-foreground text-lg text-center mb-10 font-body font-light" {...fadeIn}>
         Ao entrar no PresenteMente, a transformação buscada é que você desenvolva:
       </motion.p>
 
@@ -46,7 +46,7 @@ const TransformationSection = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
           >
-            <span className="text-gold text-xl mt-0.5">+</span>
+            <span className="text-gold text-lg mt-0.5">+</span>
             <span className="text-foreground font-body">{item}</span>
           </motion.div>
         ))}
@@ -62,7 +62,7 @@ const TransformationSection = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: (more.length + i) * 0.08 }}
           >
-            <span className="text-gold text-xl mt-0.5">−</span>
+            <span className="text-gold text-lg mt-0.5">−</span>
             <span className="text-foreground font-body">{item}</span>
           </motion.div>
         ))}
@@ -75,12 +75,12 @@ const TransformationSection = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.7 }}
       >
-        <span className="text-gold text-xl mt-0.5">+</span>
+        <span className="text-gold text-lg mt-0.5">+</span>
         <span className="text-foreground font-body">mais leveza para continuar crescendo sem se romper por dentro</span>
       </motion.div>
 
       <motion.div className="text-center mt-12 border-t border-border pt-10" {...fadeIn}>
-        <p className="text-3xl font-display italic text-foreground">
+        <p className="text-lg font-display italic text-foreground">
           Você continua forte.<br />
           <span className="gold-text">Mas não precisa continuar endurecida.</span>
         </p>

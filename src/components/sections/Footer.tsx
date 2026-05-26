@@ -20,7 +20,7 @@ const Footer = () => (
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-3 font-body">Contato</p>
           <a
             href="tel:+5511993568491"
-            className="inline-flex items-center gap-2 text-hero-foreground hover:text-gold transition-colors font-body text-xl"
+            className="inline-flex items-center gap-2 text-hero-foreground hover:text-gold transition-colors font-body text-lg"
           >
             <Phone className="w-4 h-4" />
             (11) 9.9356-8491

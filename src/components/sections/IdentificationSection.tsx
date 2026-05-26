@@ -54,17 +54,17 @@ const IdentificationSection = () => (
         <div className="lg:col-span-7">
           <motion.div {...fadeIn}>
             <div className="divider-gold-left mb-8" />
-            <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-8">
+            <h2 className="font-display text-lg md:text-2xl font-medium leading-tight mb-8">
               Se por fora você sustenta resultados, mas por dentro sente o peso de carregar tudo…{" "}
               <span className="gold-text italic">essa mentoria é para você</span>
             </h2>
           </motion.div>
 
-          <motion.p className="text-muted-foreground text-xl leading-relaxed mb-6 font-body font-light" {...fadeIn}>
+          <motion.p className="text-muted-foreground text-lg leading-relaxed mb-6 font-body font-light" {...fadeIn}>
             O PresenteMente foi desenhado para mulheres que ocupam posições de liderança, influência e responsabilidade — e que, mesmo sendo admiradas, competentes e bem-sucedidas, sentem que estão vivendo no limite.
           </motion.p>
 
-          <motion.p className="text-foreground text-xl mb-8 font-body font-medium" {...fadeIn}>
+          <motion.p className="text-foreground text-lg mb-8 font-body font-medium" {...fadeIn}>
             Talvez você esteja vivendo uma ou mais destas situações:
           </motion.p>
 
@@ -85,7 +85,7 @@ const IdentificationSection = () => (
           </div>
 
           <motion.div className="border-t border-border pt-8" {...fadeIn}>
-            <p className="text-xl font-display italic text-foreground leading-relaxed">
+            <p className="text-lg font-display italic text-foreground leading-relaxed">
               O problema não é falta de capacidade.<br />
               <span className="gold-text">O problema é sustentar alta performance por tempo demais sem reorganizar a forma como você opera por dentro.</span>
             </p>
