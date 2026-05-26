@@ -12,7 +12,7 @@ const AuthoritySection = () => (
     <div className="container max-w-3xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
+        <h2 className="font-display text-4xl md:text-5xl font-medium leading-tight mb-8 text-center text-section-dark-foreground">
           Uma condução estratégica para mulheres que não querem mais viver sob o peso da{" "}
           <span className="gold-gradient-text">exaustão silenciosa</span>
         </h2>
