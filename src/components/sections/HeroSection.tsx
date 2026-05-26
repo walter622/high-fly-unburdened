@@ -22,9 +22,9 @@ const HeroSection = () => (
               className="h-72 md:h-80 lg:h-96 w-auto mb-8 mx-auto lg:mx-0 brightness-0 invert"
             />
 
-            <h1 className="font-display text-2xl md:text-lg lg:text-2xl font-medium leading-[1.05] mb-8">
+            <h1 className="font-display text-lg md:text-lg lg:text-2xl font-medium leading-[1.05] mb-8">
               Alta Performance sem Exaustão
-              <span className="block mt-4 text-2xl md:text-lg lg:text-2xl text-hero-muted font-light italic leading-snug">
+              <span className="block mt-4 text-lg md:text-lg lg:text-2xl text-hero-muted font-light italic leading-snug">
                 A Mentoria para Mulheres Executivas que Querem Crescer com Clareza, Poder e Equilíbrio
               </span>
             </h1>

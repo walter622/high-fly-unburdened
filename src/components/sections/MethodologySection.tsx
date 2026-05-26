@@ -55,7 +55,7 @@ const MethodologySection = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.15 }}
           >
-            <span className="gold-gradient-text font-display text-2xl font-bold opacity-40 absolute top-4 right-6">
+            <span className="gold-gradient-text font-display text-lg font-bold opacity-40 absolute top-4 right-6">
               {step.num}
             </span>
             <h3 className="font-display text-lg text-gold mb-3">{step.title}</h3>

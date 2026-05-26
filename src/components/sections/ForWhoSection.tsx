@@ -47,7 +47,7 @@ const ForWhoSection = () => (
               transition={{ duration: 0.6 }}
             >
               <h3 className="font-display text-lg gold-text mb-6 flex items-center gap-2">
-                <span className="text-2xl">✦</span> É para:
+                <span className="text-lg">✦</span> É para:
               </h3>
               <div className="space-y-4">
                 {forItems.map((item, i) => (
@@ -66,7 +66,7 @@ const ForWhoSection = () => (
               transition={{ duration: 0.6, delay: 0.15 }}
             >
               <h3 className="font-display text-lg text-muted-foreground mb-6 flex items-center gap-2">
-                <span className="text-2xl">—</span> Não é para:
+                <span className="text-lg">—</span> Não é para:
               </h3>
               <div className="space-y-4">
                 {notForItems.map((item, i) => (
