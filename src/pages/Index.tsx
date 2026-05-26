@@ -14,6 +14,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import CtaSection from "@/components/sections/CtaSection";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
+import Footer from "@/components/sections/Footer";
 
 const Index = () => (
   <main className="overflow-x-hidden">
@@ -33,6 +34,7 @@ const Index = () => (
     <CtaSection />
     <FaqSection />
     <FinalCtaSection />
+    <Footer />
   </main>
 );
 
