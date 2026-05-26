@@ -22,16 +22,16 @@ const HeroSection = () => (
               className="h-72 md:h-80 lg:h-96 w-auto mb-8 mx-auto lg:mx-0 brightness-0 invert"
             />
 
-            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.05] mb-8">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] mb-8">
               Transformando a Ansiedade em Alta Performance
-              <span className="block mt-4 text-4xl md:text-5xl lg:text-6xl text-hero-muted font-light italic leading-snug">
+              <span className="block mt-4 text-3xl md:text-4xl lg:text-5xl text-hero-muted font-light italic leading-snug">
                 A Mentoria para Mulheres Executivas que Querem Crescer com Clareza, Poder e Equilíbrio
               </span>
             </h1>
           </motion.div>
 
           <motion.p
-            className="text-hero-muted text-xl md:text-2xl leading-relaxed mb-6 font-body font-light"
+            className="text-hero-muted text-lg md:text-xl leading-relaxed mb-6 font-body font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
