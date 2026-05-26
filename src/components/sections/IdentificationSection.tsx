@@ -54,7 +54,7 @@ const IdentificationSection = () => (
         <div className="lg:col-span-7">
           <motion.div {...fadeIn}>
             <div className="divider-gold-left mb-8" />
-            <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8">
+            <h2 className="font-display text-4xl md:text-5xl font-medium leading-tight mb-8">
               Se por fora você sustenta resultados, mas por dentro sente o peso de carregar tudo…{" "}
               <span className="gold-text italic">essa mentoria é para você</span>
             </h2>

@@ -14,7 +14,7 @@ const WhatIsSection = () => (
     <div className="container max-w-3xl mx-auto px-6">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />
-        <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight mb-8 text-center">
+        <h2 className="font-display text-4xl md:text-5xl font-medium leading-tight mb-8 text-center">
           O PresenteMente é a mentoria de{" "}
           <span className="gold-text">Edgard Gonçalves</span>{" "}
           para mulheres executivas que desejam alta performance com equilíbrio
