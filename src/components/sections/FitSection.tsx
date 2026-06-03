@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import womanImage from "@/assets/executive-woman-5.jpg";
+
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },

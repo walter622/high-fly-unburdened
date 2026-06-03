@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import womanImage from "@/assets/executive-woman-4.jpg";
+
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -30,6 +32,26 @@ const TransformationSection = () => (
           O que muda quando você para de liderar no limite e{" "}
           <span className="gold-text italic">começa a operar com clareza</span>
         </h2>
+      </motion.div>
+
+      <motion.div
+        className="mb-12 max-w-2xl mx-auto"
+        initial={{ opacity: 0, scale: 0.96 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.9 }}
+      >
+        <div className="relative">
+          <div className="absolute -inset-3 border border-gold/40 rounded-sm translate-x-4 translate-y-4" />
+          <div className="relative overflow-hidden rounded-sm shadow-xl">
+            <img
+              src={womanImage}
+              alt="Mulher executiva confiante representando clareza e equilíbrio"
+              className="w-full h-auto object-cover aspect-[4/3]"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </motion.div>
 
       <motion.p className="text-muted-foreground text-xl text-center mb-10 font-body font-light" {...fadeIn}>
