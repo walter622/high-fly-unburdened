@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import empresasImage from "@/assets/empresas-atendidas.jpg";
+import empresasImage from "@/assets/empresas-atendidas.png";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
