@@ -22,7 +22,7 @@ const HeroSection = () => (
 
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] mb-8">
             Transformando a Ansiedade em Alta Performance
-            <span className="block mt-4 text-3xl md:text-4xl lg:text-5xl text-hero-muted font-light italic leading-snug">
+            <span className="block mt-4 text-2xl md:text-3xl lg:text-4xl text-hero-muted font-light italic leading-snug">
               Um acompanhamento premium para mulheres em posição de liderança que vivem sob pressão constante, cansaço mental e ansiedade silenciosa, e desejam recuperar clareza, equilíbrio e alta performance de verdade.
             </span>
           </h1>
