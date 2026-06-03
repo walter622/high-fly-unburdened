@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import womanImage from "@/assets/executive-woman-5.jpg";
+
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -26,6 +28,26 @@ const FitSection = () => (
           O PresenteMente{" "}
           <span className="gold-gradient-text">faz sentido para você?</span>
         </h2>
+      </motion.div>
+
+      <motion.div
+        className="mb-12 max-w-2xl mx-auto"
+        initial={{ opacity: 0, scale: 0.96 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.9 }}
+      >
+        <div className="relative">
+          <div className="absolute -inset-3 border border-gold/40 rounded-sm -translate-x-4 translate-y-4" />
+          <div className="relative overflow-hidden rounded-sm shadow-2xl">
+            <img
+              src={womanImage}
+              alt="Mulher executiva empoderada representando liderança e autoridade"
+              className="w-full h-auto object-cover aspect-[4/3]"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </motion.div>
 
       <motion.p className="text-section-dark-foreground/70 text-lg leading-relaxed mb-10 text-center font-body font-light" {...fadeIn}>
