@@ -11,6 +11,7 @@ import DifferentialSection from "@/components/sections/DifferentialSection";
 import AuthoritySection from "@/components/sections/AuthoritySection";
 import ForWhoSection from "@/components/sections/ForWhoSection";
 import AboutSection from "@/components/sections/AboutSection";
+import CompaniesSection from "@/components/sections/CompaniesSection";
 import CtaSection from "@/components/sections/CtaSection";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
@@ -31,6 +32,7 @@ const Index = () => (
     <AuthoritySection />
     <ForWhoSection />
     <AboutSection />
+    <CompaniesSection />
     <CtaSection />
     <FaqSection />
     <FinalCtaSection />
