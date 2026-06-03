@@ -28,14 +28,6 @@ const HeroSection = () => (
           </h1>
         </motion.div>
 
-        <motion.p
-          className="text-hero-muted text-lg md:text-xl leading-relaxed mb-10 font-body font-light max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          Um acompanhamento premium para mulheres em posição de liderança que desejam sustentar resultados, tomar decisões com mais segurança e fortalecer sua autoridade sem viver no limite, com a condução estratégica de Edgard Gonçalves.
-        </motion.p>
 
         {/* VSL Video placeholder */}
         <motion.div
