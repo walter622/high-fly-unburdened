@@ -32,6 +32,7 @@ const Index = () => (
     <AuthoritySection />
     <ForWhoSection />
     <AboutSection />
+    <CompaniesSection />
     <CtaSection />
     <FaqSection />
     <FinalCtaSection />
