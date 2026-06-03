@@ -23,19 +23,11 @@ const HeroSection = () => (
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] mb-8">
             Transformando a Ansiedade em Alta Performance
             <span className="block mt-4 text-3xl md:text-4xl lg:text-5xl text-hero-muted font-light italic leading-snug">
-              A Mentoria para Mulheres Executivas que Querem Crescer com Clareza, Poder e Equilíbrio
+              Um acompanhamento premium para mulheres em posição de liderança que vivem sob pressão constante, cansaço mental e ansiedade silenciosa, e desejam recuperar clareza, equilíbrio e alta performance de verdade.
             </span>
           </h1>
         </motion.div>
 
-        <motion.p
-          className="text-hero-muted text-lg md:text-xl leading-relaxed mb-10 font-body font-light max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          Um acompanhamento premium para mulheres em posição de liderança que desejam sustentar resultados, tomar decisões com mais segurança e fortalecer sua autoridade sem viver no limite, com a condução estratégica de Edgard Gonçalves.
-        </motion.p>
 
         {/* VSL Video placeholder */}
         <motion.div
