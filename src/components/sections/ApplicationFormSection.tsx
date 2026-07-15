@@ -34,6 +34,12 @@ const fadeIn = {
   transition: { duration: 0.7 },
 };
 
+const inputClass =
+  "w-full px-4 py-3 bg-hero-bg/60 border border-white/15 rounded-md font-body text-section-dark-foreground placeholder:text-section-dark-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition";
+
+const labelClass =
+  "block text-sm font-body font-medium mb-2 text-section-dark-foreground tracking-wide";
+
 const ApplicationFormSection = () => {
   const [form, setForm] = useState({ nome: "", telefone: "", whatsapp: "", situacao: "" });
   const [loading, setLoading] = useState(false);
@@ -70,14 +76,14 @@ const ApplicationFormSection = () => {
   };
 
   return (
-    <section id="candidatura" className="section-light py-24 md:py-32">
-      <div className="container max-w-2xl mx-auto px-6">
+    <section id="candidatura" className="section-dark py-24 md:py-32">
+      <div className="container max-w-xl mx-auto px-6">
         <motion.div {...fadeIn} className="text-center mb-12">
           <div className="divider-gold mb-8" />
-          <h2 className="font-display text-4xl md:text-5xl font-medium leading-tight mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-medium leading-tight mb-4 text-section-dark-foreground">
             Candidate-se para o <span className="gold-gradient-text italic">PresenteMente</span>
           </h2>
-          <p className="text-muted-foreground font-body text-lg">
+          <p className="text-section-dark-foreground/70 font-body text-lg">
             Preencha os campos abaixo. Nossa equipe entrará em contato para avaliar seu perfil.
           </p>
         </motion.div>
@@ -85,12 +91,10 @@ const ApplicationFormSection = () => {
         <motion.form
           {...fadeIn}
           onSubmit={onSubmit}
-          className="bg-card border border-border rounded-sm p-8 md:p-10 shadow-sm space-y-6"
+          className="space-y-6"
         >
           <div>
-            <label htmlFor="nome" className="block text-sm font-body font-medium mb-2 tracking-wide">
-              Nome completo *
-            </label>
+            <label htmlFor="nome" className={labelClass}>Nome</label>
             <input
               id="nome"
               type="text"
@@ -98,69 +102,58 @@ const ApplicationFormSection = () => {
               maxLength={200}
               value={form.nome}
               onChange={(e) => setForm({ ...form, nome: e.target.value })}
-              className="w-full px-4 py-3 bg-background border border-input rounded-sm font-body focus:outline-none focus:ring-2 focus:ring-ring transition"
-              placeholder="Seu nome"
+              className={inputClass}
+              placeholder="Seu nome completo"
             />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="telefone" className="block text-sm font-body font-medium mb-2 tracking-wide">
-                Telefone *
-              </label>
-              <input
-                id="telefone"
-                type="tel"
-                required
-                maxLength={50}
-                value={form.telefone}
-                onChange={(e) => setForm({ ...form, telefone: e.target.value })}
-                className="w-full px-4 py-3 bg-background border border-input rounded-sm font-body focus:outline-none focus:ring-2 focus:ring-ring transition"
-                placeholder="(11) 99999-9999"
-              />
-            </div>
-            <div>
-              <label htmlFor="whatsapp" className="block text-sm font-body font-medium mb-2 tracking-wide">
-                WhatsApp
-              </label>
-              <input
-                id="whatsapp"
-                type="tel"
-                maxLength={50}
-                value={form.whatsapp}
-                onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
-                className="w-full px-4 py-3 bg-background border border-input rounded-sm font-body focus:outline-none focus:ring-2 focus:ring-ring transition"
-                placeholder="(11) 99999-9999"
-              />
-            </div>
+          <div>
+            <label htmlFor="telefone" className={labelClass}>Telefone</label>
+            <input
+              id="telefone"
+              type="tel"
+              required
+              maxLength={50}
+              value={form.telefone}
+              onChange={(e) => setForm({ ...form, telefone: e.target.value })}
+              className={inputClass}
+              placeholder="(00) 00000-0000"
+            />
           </div>
 
           <div>
-            <label className="block text-sm font-body font-medium mb-3 tracking-wide">
-              Você está vivendo alguma destas situações? *
+            <label htmlFor="whatsapp" className={labelClass}>WhatsApp</label>
+            <input
+              id="whatsapp"
+              type="tel"
+              maxLength={50}
+              value={form.whatsapp}
+              onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
+              className={inputClass}
+              placeholder="(00) 00000-0000"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="situacao" className={labelClass}>
+              Você está vivendo alguma destas situações?
             </label>
-            <div className="grid md:grid-cols-2 gap-2">
+            <select
+              id="situacao"
+              required
+              value={form.situacao}
+              onChange={(e) => setForm({ ...form, situacao: e.target.value })}
+              className={`${inputClass} appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 stroke=%22white%22 stroke-width=%222%22 viewBox=%220 0 24 24%22><path stroke-linecap=%22round%22 stroke-linejoin=%22round%22 d=%22M19 9l-7 7-7-7%22/></svg>')] bg-no-repeat bg-[right_1rem_center] bg-[length:1rem] pr-10`}
+            >
+              <option value="" disabled className="bg-hero-bg text-section-dark-foreground/60">
+                Selecione
+              </option>
               {SITUACOES.map((s) => (
-                <label
-                  key={s}
-                  className={`flex items-center gap-3 px-4 py-3 border rounded-sm cursor-pointer transition font-body text-sm ${
-                    form.situacao === s
-                      ? "border-primary bg-primary/5"
-                      : "border-input hover:border-primary/50"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="situacao"
-                    value={s}
-                    checked={form.situacao === s}
-                    onChange={() => setForm({ ...form, situacao: s })}
-                    className="accent-primary"
-                  />
-                  <span>{s}</span>
-                </label>
+                <option key={s} value={s} className="bg-hero-bg text-section-dark-foreground">
+                  {s}
+                </option>
               ))}
-            </div>
+            </select>
           </div>
 
           <div className="pt-4 text-center">
