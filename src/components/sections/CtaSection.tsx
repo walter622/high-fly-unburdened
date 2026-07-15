@@ -8,7 +8,7 @@ const fadeIn = {
 };
 
 const CtaSection = () => (
-  <section className="section-dark py-24 md:py-32" id="candidatura">
+  <section className="section-dark py-24 md:py-32">
     <div className="container max-w-3xl mx-auto px-6 text-center">
       <motion.div {...fadeIn}>
         <div className="divider-gold mb-10" />

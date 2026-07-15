@@ -70,7 +70,7 @@ const ApplicationFormSection = () => {
   };
 
   return (
-    <section id="formulario" className="section-light py-24 md:py-32">
+    <section id="candidatura" className="section-light py-24 md:py-32">
       <div className="container max-w-2xl mx-auto px-6">
         <motion.div {...fadeIn} className="text-center mb-12">
           <div className="divider-gold mb-8" />
