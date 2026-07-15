@@ -13,6 +13,7 @@ import ForWhoSection from "@/components/sections/ForWhoSection";
 import AboutSection from "@/components/sections/AboutSection";
 import CompaniesSection from "@/components/sections/CompaniesSection";
 import CtaSection from "@/components/sections/CtaSection";
+import ApplicationFormSection from "@/components/sections/ApplicationFormSection";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import Footer from "@/components/sections/Footer";
@@ -34,6 +35,7 @@ const Index = () => (
     <AboutSection />
     <CompaniesSection />
     <CtaSection />
+    <ApplicationFormSection />
     <FaqSection />
     <FinalCtaSection />
     <Footer />
