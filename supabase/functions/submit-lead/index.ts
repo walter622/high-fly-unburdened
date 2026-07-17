@@ -11,13 +11,15 @@ Deno.serve(async (req) => {
   try {
     const body = await req.json();
     const nome = String(body.nome ?? '').trim().slice(0, 200);
-    const telefone = String(body.telefone ?? '').trim().slice(0, 50);
+    const email = String(body.email ?? '').trim().slice(0, 255);
     const whatsapp = String(body.whatsapp ?? '').trim().slice(0, 50);
-    const situacao = String(body.situacao ?? '').trim().slice(0, 200);
+    const situacao = Array.isArray(body.situacoes)
+      ? body.situacoes.join(', ').slice(0, 1000)
+      : String(body.situacao ?? '').trim().slice(0, 1000);
 
-    if (!nome || !telefone || !situacao) {
+    if (!nome || !email || !whatsapp || !situacao) {
       return new Response(
-        JSON.stringify({ error: 'Nome, telefone e situação são obrigatórios' }),
+        JSON.stringify({ error: 'Nome, e-mail, WhatsApp e situação são obrigatórios' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       );
     }
@@ -32,7 +34,7 @@ Deno.serve(async (req) => {
     }
 
     const dataBR = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
-    const row = [dataBR, nome, telefone, whatsapp, situacao, 'Landing PresenteMente'];
+    const row = [dataBR, nome, email, whatsapp, situacao, 'Landing PresenteMente'];
 
     const url = `${GATEWAY_URL}/spreadsheets/${SPREADSHEET_ID}/values/Página1!A:F:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
     const res = await fetch(url, {
