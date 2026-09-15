@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, Check, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import whiteLogo from "@/assets/logo-presentemente-white.png.asset.json";
+import whiteLogo from "@/assets/logo-presentemente-white.png";
 import executiveOne from "@/assets/executive-woman-1.png";
 import executiveTwo from "@/assets/executive-woman-2.png";
 import executiveThree from "@/assets/executive-woman-3.png";
@@ -96,7 +96,7 @@ export const HeroSection = () => (
     <div className="absolute inset-0 bg-hero-overlay" />
     <div className="container relative z-10 flex min-h-[92svh] max-w-7xl items-end px-6 pb-16 pt-8 md:items-center md:pb-20 md:pt-20">
       <motion.div {...reveal} className="max-w-4xl">
-        <img src={whiteLogo.url} alt="PresenteMente Corporativo" className="mb-9 h-auto w-56 object-contain object-left md:w-72" />
+        <img src={whiteLogo} alt="PresenteMente Corporativo" className="mb-9 h-auto w-56 object-contain object-left md:w-72" />
         <h1 className="max-w-3xl text-5xl font-medium leading-[0.98] md:text-7xl lg:text-8xl">Alta Performance <span className="text-primary">sem Exaustão</span></h1>
         <p className="mt-7 max-w-3xl font-display text-2xl leading-snug text-hero-foreground md:text-3xl">Você não precisa abandonar sua ambição. Precisa deixar de depender da ansiedade, da autocobrança e da sobrecarga para sustentá-la</p>
         <div className="mt-7 grid max-w-3xl gap-4 font-body text-base leading-relaxed text-hero-muted md:grid-cols-2">
@@ -269,7 +269,7 @@ export const Footer = () => (
   <footer className="bg-secondary py-14 text-section-dark-foreground border-t border-section-dark-foreground/10">
     <div className="container max-w-7xl px-6">
       <div className="grid gap-10 md:grid-cols-3 md:items-end">
-        <div><img src={whiteLogo.url} alt="PresenteMente" className="h-auto w-56 object-contain md:w-64" /><p className="mt-4 font-display text-xl">Alta Performance sem Exaustão para Mulheres que Lideram</p></div>
+        <div><img src={whiteLogo} alt="PresenteMente" className="h-auto w-56 object-contain md:w-64" /><p className="mt-4 font-display text-xl">Alta Performance sem Exaustão para Mulheres que Lideram</p></div>
         <div className="font-body text-sm leading-relaxed text-section-dark-foreground/65"><p className="font-semibold text-section-dark-foreground">Edgard Gonçalves</p><p>Especialista em Alta Performance sem Exaustão</p><p className="mt-3">Psicologia, comportamento e liderança para mulheres que ocupam posições de alta responsabilidade.</p></div>
         <p className="font-body text-xs text-section-dark-foreground/50 md:text-right">© 2026 — Todos os direitos reservados.</p>
       </div>
