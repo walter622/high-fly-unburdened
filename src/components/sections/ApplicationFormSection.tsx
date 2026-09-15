@@ -1,243 +1,109 @@
 import { useState } from "react";
+import { ChevronDown, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { z } from "zod";
+import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
 const SITUACOES = [
-  "Excesso de trabalho",
-  "Ansiedade",
-  "Estresse constante",
-  "Burnout",
-  "Falta de propósito",
-  "Dificuldade de equilibrar vida pessoal e profissional",
-  "Conflitos de relacionamento",
-  "Transição de carreira",
-  "Falta de clareza sobre o futuro",
-  "Solidão da liderança",
-  "Excesso de responsabilidade",
-  "Autocobrança",
-  "Síndrome da impostora",
+  "ansiedade frequente", "cansaço mental", "sobrecarga", "dificuldade de delegar",
+  "autocobrança excessiva", "dificuldade de desligar", "estresse constante",
+  "sinais de burnout", "dificuldade de equilibrar carreira e vida pessoal",
 ];
 
+const DURACOES = ["Menos de 3 meses", "De 3 a 6 meses", "De 6 meses a 1 ano", "De 1 a 2 anos", "Há mais de 2 anos"];
+
 const schema = z.object({
-  nome: z.string().trim().min(2, "Informe seu nome").max(200),
+  nome: z.string().trim().min(2, "Informe seu nome completo").max(200),
   email: z.string().trim().email("Informe um e-mail válido").max(255),
   whatsapp: z.string().trim().min(8, "Informe um WhatsApp válido").max(50),
-  situacoes: z.array(z.string()).min(1, "Selecione ao menos uma opção"),
+  cidadeEstado: z.string().trim().min(2, "Informe sua cidade e estado").max(150),
+  cargo: z.string().trim().min(2, "Informe seu cargo atual").max(150),
+  empresaSegmento: z.string().trim().min(2, "Informe sua empresa ou segmento").max(200),
+  situacoes: z.array(z.string()).min(1, "Selecione ao menos uma situação"),
+  duracao: z.string().min(1, "Informe há quanto tempo"),
+  impacto: z.coerce.number().min(0).max(10),
+  objetivo: z.string().trim().min(10, "Conte um pouco mais sobre o que gostaria de mudar").max(1500),
 });
 
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.7 },
+type FormState = z.infer<typeof schema>;
+
+const initialForm: FormState = {
+  nome: "", email: "", whatsapp: "", cidadeEstado: "", cargo: "", empresaSegmento: "",
+  situacoes: [], duracao: "", impacto: 5, objetivo: "",
 };
 
-const inputClass =
-  "w-full px-4 py-3 bg-hero-bg/60 border border-white/15 rounded-md font-body text-section-dark-foreground placeholder:text-section-dark-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition";
-
-const labelClass =
-  "block text-sm font-body font-medium mb-2 text-section-dark-foreground tracking-wide";
+const inputClass = "w-full border border-section-dark-foreground/20 bg-section-dark-foreground/5 px-4 py-3.5 font-body text-section-dark-foreground outline-none transition placeholder:text-section-dark-foreground/35 focus:border-primary focus:ring-1 focus:ring-primary";
+const labelClass = "mb-2 block font-body text-sm font-medium text-section-dark-foreground";
 
 const ApplicationFormSection = () => {
-  const [form, setForm] = useState<{
-    nome: string;
-    email: string;
-    whatsapp: string;
-    situacoes: string[];
-  }>({ nome: "", email: "", whatsapp: "", situacoes: [] });
+  const [form, setForm] = useState<FormState>(initialForm);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const toggleSituacao = (s: string) => {
-    setForm((f) => ({
-      ...f,
-      situacoes: f.situacoes.includes(s)
-        ? f.situacoes.filter((x) => x !== s)
-        : [...f.situacoes, s],
-    }));
-  };
+  const toggleSituacao = (situacao: string) => setForm((current) => ({
+    ...current,
+    situacoes: current.situacoes.includes(situacao)
+      ? current.situacoes.filter((item) => item !== situacao)
+      : [...current.situacoes, situacao],
+  }));
 
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
-      toast({
-        title: "Verifique o formulário",
-        description: parsed.error.issues[0]?.message ?? "Dados inválidos",
-        variant: "destructive",
-      });
+      toast({ title: "Verifique o formulário", description: parsed.error.issues[0]?.message ?? "Dados inválidos", variant: "destructive" });
       return;
     }
     setLoading(true);
     try {
-      const { error } = await supabase.functions.invoke("submit-lead", {
-        body: {
-          ...parsed.data,
-          situacao: parsed.data.situacoes.join(", "),
-        },
-      });
+      const { error } = await supabase.functions.invoke("submit-lead", { body: parsed.data });
       if (error) throw error;
       setSent(true);
-      setForm({ nome: "", email: "", whatsapp: "", situacoes: [] });
-      toast({ title: "Candidatura enviada", description: "Em breve entraremos em contato." });
-    } catch (err) {
-      console.error(err);
-      toast({
-        title: "Não foi possível enviar",
-        description: "Tente novamente em instantes.",
-        variant: "destructive",
-      });
+      setForm(initialForm);
+      toast({ title: "Solicitação enviada", description: "Em breve entraremos em contato." });
+    } catch {
+      toast({ title: "Não foi possível enviar", description: "Tente novamente em instantes.", variant: "destructive" });
     } finally {
       setLoading(false);
     }
   };
 
-  const selectedLabel =
-    form.situacoes.length === 0
-      ? "Selecione"
-      : form.situacoes.length === 1
-      ? form.situacoes[0]
-      : `${form.situacoes.length} opções selecionadas`;
-
   return (
-    <section id="candidatura" className="section-dark py-24 md:py-32">
-      <div className="container max-w-xl mx-auto px-6">
-        <motion.div {...fadeIn} className="text-center mb-12">
-          <div className="divider-gold mb-8" />
-          <h2 className="font-display text-4xl md:text-5xl font-medium leading-tight mb-4 text-section-dark-foreground">
-            Candidate-se para o <span className="gold-gradient-text italic">PresenteMente</span>
-          </h2>
-          <p className="text-section-dark-foreground/70 font-body text-lg">
-            Preencha os campos abaixo. Nossa equipe entrará em contato para avaliar seu perfil.
-          </p>
-        </motion.div>
-
-        <motion.form {...fadeIn} onSubmit={onSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="nome" className={labelClass}>Nome</label>
-            <input
-              id="nome"
-              type="text"
-              required
-              maxLength={200}
-              value={form.nome}
-              onChange={(e) => setForm({ ...form, nome: e.target.value })}
-              className={inputClass}
-              placeholder="Seu nome completo"
-            />
+    <section id="sessao" className="section-dark py-24 md:py-32">
+      <div className="container max-w-6xl px-6">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+          <div className="lg:sticky lg:top-12 lg:self-start">
+            <p className="mb-5 font-body text-xs font-semibold uppercase tracking-[0.22em] text-primary">Solicite sua Sessão Diagnóstica</p>
+            <h2 className="text-4xl font-medium leading-[1.08] text-section-dark-foreground md:text-5xl">Para preservar a qualidade das conversas e o acompanhamento individual, as sessões são realizadas mediante aplicação.</h2>
+            <p className="mt-7 font-body text-lg text-section-dark-foreground/70">Preencha seus dados abaixo.</p>
           </div>
 
-          <div>
-            <label htmlFor="email" className={labelClass}>E-mail</label>
-            <input
-              id="email"
-              type="email"
-              required
-              maxLength={255}
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className={inputClass}
-              placeholder="seu@email.com"
-            />
-          </div>
+          <form onSubmit={onSubmit} className="grid gap-6 border border-section-dark-foreground/15 bg-section-dark-foreground/5 p-6 md:grid-cols-2 md:p-10" noValidate>
+            <div className="md:col-span-2"><label className={labelClass} htmlFor="nome">Nome completo</label><input id="nome" value={form.nome} onChange={(e) => setForm({ ...form, nome: e.target.value })} className={inputClass} maxLength={200} /></div>
+            <div><label className={labelClass} htmlFor="email">E-mail</label><input id="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClass} maxLength={255} /></div>
+            <div><label className={labelClass} htmlFor="whatsapp">WhatsApp</label><input id="whatsapp" type="tel" value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} className={inputClass} maxLength={50} /></div>
+            <div><label className={labelClass} htmlFor="cidade">Cidade / Estado</label><input id="cidade" value={form.cidadeEstado} onChange={(e) => setForm({ ...form, cidadeEstado: e.target.value })} className={inputClass} maxLength={150} /></div>
+            <div><label className={labelClass} htmlFor="cargo">Cargo atual</label><input id="cargo" value={form.cargo} onChange={(e) => setForm({ ...form, cargo: e.target.value })} className={inputClass} maxLength={150} /></div>
+            <div className="md:col-span-2"><label className={labelClass} htmlFor="empresa">Empresa / segmento</label><input id="empresa" value={form.empresaSegmento} onChange={(e) => setForm({ ...form, empresaSegmento: e.target.value })} className={inputClass} maxLength={200} /></div>
 
-          <div>
-            <label htmlFor="whatsapp" className={labelClass}>WhatsApp</label>
-            <input
-              id="whatsapp"
-              type="tel"
-              required
-              maxLength={50}
-              value={form.whatsapp}
-              onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
-              className={inputClass}
-              placeholder="(00) 00000-0000"
-            />
-          </div>
-
-          <div>
-            <label className={labelClass}>
-              Você está vivendo alguma destas situações? <span className="text-section-dark-foreground/50">(selecione uma ou mais)</span>
-            </label>
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => setOpen((o) => !o)}
-                className={`${inputClass} text-left flex items-center justify-between`}
-              >
-                <span className={form.situacoes.length === 0 ? "text-section-dark-foreground/40" : ""}>
-                  {selectedLabel}
-                </span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  className={`w-4 h-4 ml-2 transition-transform ${open ? "rotate-180" : ""}`}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {open && (
-                <div className="absolute z-20 mt-2 w-full max-h-72 overflow-y-auto rounded-md border border-white/15 bg-hero-bg shadow-xl">
-                  {SITUACOES.map((s) => {
-                    const checked = form.situacoes.includes(s);
-                    return (
-                      <label
-                        key={s}
-                        className="flex items-center gap-3 px-4 py-2.5 cursor-pointer hover:bg-white/5 text-section-dark-foreground font-body text-sm"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={checked}
-                          onChange={() => toggleSituacao(s)}
-                          className="w-4 h-4 accent-primary"
-                        />
-                        <span>{s}</span>
-                      </label>
-                    );
-                  })}
-                </div>
-              )}
+            <div className="relative md:col-span-2">
+              <span className={labelClass}>Qual dessas situações mais representa seu momento atual?</span>
+              <Button type="button" variant="outline" onClick={() => setOpen((value) => !value)} aria-expanded={open} className={`${inputClass} h-auto justify-between rounded-none hover:bg-section-dark-foreground/10 hover:text-section-dark-foreground`}>
+                <span>{form.situacoes.length ? `${form.situacoes.length} ${form.situacoes.length === 1 ? "situação selecionada" : "situações selecionadas"}` : "Selecione uma ou mais situações"}</span><ChevronDown className={`transition-transform ${open ? "rotate-180" : ""}`} />
+              </Button>
+              {open && <div className="absolute z-20 mt-1 max-h-72 w-full overflow-y-auto border border-section-dark-foreground/20 bg-secondary p-2 shadow-premium">{SITUACOES.map((situacao) => <label key={situacao} className="flex cursor-pointer items-center gap-3 px-3 py-2.5 font-body text-sm text-section-dark-foreground hover:bg-section-dark-foreground/5"><input type="checkbox" checked={form.situacoes.includes(situacao)} onChange={() => toggleSituacao(situacao)} className="h-4 w-4 accent-primary" />{situacao};</label>)}</div>}
+              {form.situacoes.length > 0 && <div className="mt-3 flex flex-wrap gap-2">{form.situacoes.map((situacao) => <span key={situacao} className="inline-flex items-center gap-2 border border-primary/35 bg-primary/10 px-3 py-1.5 font-body text-xs text-section-dark-foreground">{situacao}<button type="button" onClick={() => toggleSituacao(situacao)} aria-label={`Remover ${situacao}`}><X className="h-3 w-3" /></button></span>)}</div>}
             </div>
 
-            {form.situacoes.length > 0 && (
-              <div className="flex flex-wrap gap-2 mt-3">
-                {form.situacoes.map((s) => (
-                  <span
-                    key={s}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 text-xs text-section-dark-foreground"
-                  >
-                    {s}
-                    <button
-                      type="button"
-                      onClick={() => toggleSituacao(s)}
-                      className="text-section-dark-foreground/70 hover:text-section-dark-foreground"
-                      aria-label={`Remover ${s}`}
-                    >
-                      ×
-                    </button>
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="pt-4 text-center">
-            <button
-              type="submit"
-              disabled={loading || sent}
-              className="cta-button rounded-sm disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              {sent ? "Candidatura enviada ✓" : loading ? "Enviando..." : "Enviar candidatura"}
-            </button>
-          </div>
-        </motion.form>
+            <div className="md:col-span-2"><label className={labelClass} htmlFor="duracao">Há quanto tempo você sente que isso está afetando sua vida?</label><select id="duracao" value={form.duracao} onChange={(e) => setForm({ ...form, duracao: e.target.value })} className={inputClass}><option value="">Selecione</option>{DURACOES.map((duracao) => <option key={duracao} value={duracao}>{duracao}</option>)}</select></div>
+            <div className="md:col-span-2"><label className={labelClass} htmlFor="impacto">De 0 a 10, quanto essa situação está impactando você atualmente?</label><div className="flex items-center gap-5"><input id="impacto" type="range" min="0" max="10" step="1" value={form.impacto} onChange={(e) => setForm({ ...form, impacto: Number(e.target.value) })} className="w-full accent-primary" /><output htmlFor="impacto" className="grid h-12 w-12 shrink-0 place-items-center border border-primary font-display text-2xl text-primary">{form.impacto}</output></div></div>
+            <div className="md:col-span-2"><label className={labelClass} htmlFor="objetivo">O que você gostaria que estivesse diferente na sua vida profissional e pessoal daqui a 6 meses?</label><textarea id="objetivo" rows={5} value={form.objetivo} onChange={(e) => setForm({ ...form, objetivo: e.target.value })} className={`${inputClass} resize-none`} maxLength={1500} /></div>
+            <div className="md:col-span-2"><Button type="submit" disabled={loading || sent} className="h-auto min-h-14 w-full rounded-sm px-7 py-4 font-body text-sm font-semibold uppercase tracking-[0.08em] shadow-premium">{sent ? "Solicitação enviada" : loading ? "Enviando..." : "Solicitar minha Sessão Diagnóstica"}</Button></div>
+          </form>
+        </motion.div>
       </div>
     </section>
   );
