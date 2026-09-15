@@ -68,7 +68,7 @@ const sessionItems = [
 ];
 
 const CtaButton = ({ children }: { children: React.ReactNode }) => (
-  <Button asChild size="lg" className="h-auto min-h-14 whitespace-normal rounded-sm px-7 py-4 text-center font-body text-sm font-semibold uppercase tracking-[0.08em] shadow-premium transition-transform hover:-translate-y-0.5 animate-[cta-pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite] md:px-9">
+  <Button asChild size="lg" className="h-auto min-h-14 whitespace-nowrap rounded-sm px-5 py-4 text-center font-body text-[11px] font-semibold uppercase tracking-[0.04em] shadow-premium transition-transform hover:-translate-y-0.5 animate-[cta-pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite] md:px-9 md:text-sm md:tracking-[0.08em]">
     <a href="#sessao">{children}<ArrowRight aria-hidden="true" /></a>
   </Button>
 );
@@ -185,7 +185,7 @@ export const ThesisSection = () => (
     <div className="container max-w-7xl px-6">
       <motion.div {...reveal} className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
         <div><SectionHeading>Alta performance de verdade não é suportar cada vez mais</SectionHeading><div className="mt-8 space-y-3 font-body text-lg text-muted-foreground"><p>Não é trabalhar até o corpo pedir para parar.</p><p>Não é viver permanentemente em estado de alerta.</p><p>Não é confundir ansiedade com responsabilidade.</p><p>Não é confundir autocobrança com excelência.</p><p>Não é confundir controle com liderança.</p></div></div>
-        <div className="bg-secondary p-8 text-section-dark-foreground shadow-premium md:p-12"><p className="font-body leading-relaxed text-section-dark-foreground/75">Alta performance de verdade é conseguir sustentar resultados preservando:</p><div className="my-8 grid grid-cols-2 gap-4 font-display text-2xl text-primary"><p>energia.</p><p>clareza.</p><p>capacidade de decisão.</p><p>relacionamentos.</p><p>saúde emocional.</p><p>presença fora do trabalho.</p></div><p className="border-t border-section-dark-foreground/15 pt-8 font-display text-3xl leading-snug">Você não precisa ser menos ambiciosa.<br /><span className="text-primary">Precisa aprender outra forma de sustentar sua ambição.</span></p></div>
+        <div className="bg-secondary p-8 text-section-dark-foreground shadow-premium md:p-12"><p className="font-body leading-relaxed text-section-dark-foreground/75">Alta performance de verdade é conseguir sustentar resultados preservando:</p><div className="my-8 grid grid-cols-1 gap-4 font-display text-2xl text-primary sm:grid-cols-2"><p>energia.</p><p>clareza.</p><p>capacidade de decisão.</p><p>relacionamentos.</p><p>saúde emocional.</p><p>presença fora do trabalho.</p></div><p className="border-t border-section-dark-foreground/15 pt-8 font-display text-3xl leading-snug">Você não precisa ser menos ambiciosa.<br /><span className="text-primary">Precisa aprender outra forma de sustentar sua ambição.</span></p></div>
       </motion.div>
     </div>
   </section>
