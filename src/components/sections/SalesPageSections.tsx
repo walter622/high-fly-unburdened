@@ -68,7 +68,7 @@ const sessionItems = [
 ];
 
 const CtaButton = ({ children }: { children: React.ReactNode }) => (
-  <Button asChild size="lg" className="h-auto min-h-14 whitespace-normal rounded-sm px-7 py-4 text-center font-body text-sm font-semibold uppercase tracking-[0.08em] shadow-premium transition-transform hover:-translate-y-0.5 md:px-9">
+  <Button asChild size="lg" className="h-auto min-h-14 whitespace-normal rounded-sm px-7 py-4 text-center font-body text-sm font-semibold uppercase tracking-[0.08em] shadow-premium transition-transform hover:-translate-y-0.5 animate-[cta-pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite] md:px-9">
     <a href="#sessao">{children}<ArrowRight aria-hidden="true" /></a>
   </Button>
 );
