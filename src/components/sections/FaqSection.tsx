@@ -14,7 +14,6 @@ const FaqSection = () => (
   <section className="section-cream py-24 md:py-32">
     <div className="container max-w-5xl px-6">
       <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-        <p className="mb-5 text-center font-body text-xs font-semibold uppercase tracking-[0.22em] text-primary">FAQ</p>
         <h2 className="text-center text-4xl font-medium md:text-6xl">Perguntas frequentes</h2>
         <Accordion type="single" collapsible className="mt-14 border-t border-border">
           {faqs.map((faq, index) => <AccordionItem key={faq.q} value={`faq-${index}`} className="border-b border-border"><AccordionTrigger className="py-6 text-left font-display text-xl font-medium hover:no-underline md:text-2xl">{faq.q}</AccordionTrigger><AccordionContent className="max-w-3xl pb-7 font-body text-base leading-relaxed text-muted-foreground">{faq.a}</AccordionContent></AccordionItem>)}

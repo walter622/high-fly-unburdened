@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, Check, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-presentemente-cropped.png";
+import whiteLogo from "@/assets/logo-presentemente-white.png.asset.json";
 import executiveOne from "@/assets/executive-woman-1.png";
 import executiveTwo from "@/assets/executive-woman-2.png";
 import executiveThree from "@/assets/executive-woman-3.png";
@@ -73,9 +73,8 @@ const CtaButton = ({ children }: { children: React.ReactNode }) => (
   </Button>
 );
 
-const SectionHeading = ({ eyebrow, children, light = false }: { eyebrow: string; children: React.ReactNode; light?: boolean }) => (
+const SectionHeading = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => (
   <div className="max-w-4xl">
-    <p className={`mb-5 font-body text-xs font-semibold uppercase tracking-[0.22em] ${light ? "text-primary" : "text-primary"}`}>{eyebrow}</p>
     <h2 className={`text-4xl font-medium leading-[1.08] md:text-5xl lg:text-6xl ${light ? "text-section-dark-foreground" : "text-foreground"}`}>{children}</h2>
   </div>
 );
@@ -97,7 +96,7 @@ export const HeroSection = () => (
     <div className="absolute inset-0 bg-hero-overlay" />
     <div className="container relative z-10 flex min-h-[92svh] max-w-7xl items-end px-6 pb-16 pt-8 md:items-center md:pb-20 md:pt-20">
       <motion.div {...reveal} className="max-w-4xl">
-        <img src={logo} alt="PresenteMente Corporativo" className="mb-9 h-auto w-40 object-contain object-left md:w-48" />
+        <img src={whiteLogo.url} alt="PresenteMente Corporativo" className="mb-9 h-auto w-56 object-contain object-left md:w-72" />
         <h1 className="max-w-3xl text-5xl font-medium leading-[0.98] md:text-7xl lg:text-8xl">Alta Performance <span className="text-primary">sem Exaustão</span></h1>
         <p className="mt-7 max-w-3xl font-display text-2xl leading-snug text-hero-foreground md:text-3xl">Você não precisa abandonar sua ambição. Precisa deixar de depender da ansiedade, da autocobrança e da sobrecarga para sustentá-la</p>
         <div className="mt-7 grid max-w-3xl gap-4 font-body text-base leading-relaxed text-hero-muted md:grid-cols-2">
@@ -115,22 +114,19 @@ export const HeroSection = () => (
 export const VideoSection = () => (
   <section id="video" className="section-light py-24 md:py-32">
     <div className="container max-w-6xl px-6">
-      <motion.div {...reveal} className="grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-        <div>
-          <SectionHeading eyebrow="Assista antes de continuar">Por que mulheres extremamente competentes podem estar usando a ansiedade como combustível para performar sem perceber?</SectionHeading>
-          <div className="mt-8"><CtaButton>Quero fazer meu diagnóstico</CtaButton></div>
-        </div>
-        <div>
+      <motion.div {...reveal}>
+        <SectionHeading>Por que mulheres extremamente competentes podem estar usando a ansiedade como combustível para performar sem perceber?</SectionHeading>
+        <div className="mt-12">
           <div className="relative aspect-video overflow-hidden border border-border bg-secondary shadow-premium">
             <img src={executiveFour} alt="Mulher executiva diante do computador" className="h-full w-full object-cover opacity-55" />
             <div className="absolute inset-0 grid place-items-center bg-video-overlay">
               <div className="grid h-20 w-20 place-items-center rounded-full border border-primary bg-secondary/80 text-primary"><Play className="ml-1 h-7 w-7" fill="currentColor" /></div>
             </div>
           </div>
-          <p className="mt-10 font-display text-2xl text-foreground">Talvez você tenha chegado onde chegou porque aprendeu a:</p>
-          <div className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2"><DotList items={pressurePatterns} /></div>
-          <p className="mt-8 font-body text-lg text-foreground">E isso trouxe resultado.</p>
-          <p className="mt-8 border-l-2 border-primary pl-6 font-display text-3xl leading-snug text-foreground">Mas existe uma pergunta que poucas mulheres fazem:<br /><span className="italic text-primary">Quanto está custando continuar funcionando dessa maneira?</span></p>
+        </div>
+        <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div><p className="font-display text-2xl text-foreground">Talvez você tenha chegado onde chegou porque aprendeu a:</p><div className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2"><DotList items={pressurePatterns} /></div><p className="mt-8 font-body text-lg text-foreground">E isso trouxe resultado.</p></div>
+          <div><p className="border-l-2 border-primary pl-6 font-display text-3xl leading-snug text-foreground">Mas existe uma pergunta que poucas mulheres fazem:<br /><span className="italic text-primary">Quanto está custando continuar funcionando dessa maneira?</span></p><div className="mt-8"><CtaButton>Quero fazer meu diagnóstico</CtaButton></div></div>
         </div>
       </motion.div>
     </div>
@@ -273,7 +269,7 @@ export const Footer = () => (
   <footer className="bg-secondary py-14 text-section-dark-foreground border-t border-section-dark-foreground/10">
     <div className="container max-w-7xl px-6">
       <div className="grid gap-10 md:grid-cols-3 md:items-end">
-        <div><img src={logo} alt="PresenteMente" className="h-auto w-40 object-contain" /><p className="mt-4 font-display text-xl">Alta Performance sem Exaustão para Mulheres que Lideram</p></div>
+        <div><img src={whiteLogo.url} alt="PresenteMente" className="h-auto w-56 object-contain md:w-64" /><p className="mt-4 font-display text-xl">Alta Performance sem Exaustão para Mulheres que Lideram</p></div>
         <div className="font-body text-sm leading-relaxed text-section-dark-foreground/65"><p className="font-semibold text-section-dark-foreground">Edgard Gonçalves</p><p>Especialista em Alta Performance sem Exaustão</p><p className="mt-3">Psicologia, comportamento e liderança para mulheres que ocupam posições de alta responsabilidade.</p></div>
         <p className="font-body text-xs text-section-dark-foreground/50 md:text-right">© 2026 — Todos os direitos reservados.</p>
       </div>
