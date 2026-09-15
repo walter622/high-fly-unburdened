@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, Check, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-presentemente.png";
+import logo from "@/assets/logo-presentemente-cropped.png";
 import executiveOne from "@/assets/executive-woman-1.png";
 import executiveTwo from "@/assets/executive-woman-2.png";
 import executiveThree from "@/assets/executive-woman-3.png";
@@ -97,7 +97,7 @@ export const HeroSection = () => (
     <div className="absolute inset-0 bg-hero-overlay" />
     <div className="container relative z-10 flex min-h-[92svh] max-w-7xl items-end px-6 pb-16 pt-8 md:items-center md:pb-20 md:pt-20">
       <motion.div {...reveal} className="max-w-4xl">
-        <img src={logo} alt="PresenteMente Corporativo" className="mb-9 h-24 w-24 object-contain object-center md:h-28 md:w-28" />
+        <img src={logo} alt="PresenteMente Corporativo" className="mb-9 h-auto w-40 object-contain object-left md:w-48" />
         <h1 className="max-w-3xl text-5xl font-medium leading-[0.98] md:text-7xl lg:text-8xl">Alta Performance <span className="text-primary">sem Exaustão</span></h1>
         <p className="mt-7 max-w-3xl font-display text-2xl leading-snug text-hero-foreground md:text-3xl">Você não precisa abandonar sua ambição. Precisa deixar de depender da ansiedade, da autocobrança e da sobrecarga para sustentá-la</p>
         <div className="mt-7 grid max-w-3xl gap-4 font-body text-base leading-relaxed text-hero-muted md:grid-cols-2">
@@ -240,7 +240,7 @@ export const SocialProofSection = () => (
   <section className="section-light py-24 md:py-32">
     <motion.div {...reveal} className="container max-w-6xl px-6 text-center">
       <div className="mx-auto max-w-4xl"><SectionHeading eyebrow="Autoridade / prova social">Mulheres de alta responsabilidade precisam de uma conversa diferente</SectionHeading></div>
-      <div className="mx-auto mt-14 max-w-3xl border border-border bg-card p-10 md:p-16"><p className="font-body text-xs font-semibold uppercase tracking-[0.22em] text-primary">Inserir depoimentos reais</p><blockquote className="mt-8 font-display text-4xl italic leading-snug text-foreground">“Eu me enxerguei diferente depois dessa conversa.”</blockquote></div>
+      <div className="mx-auto mt-14 max-w-3xl border border-border bg-card p-10 md:p-16"><p className="font-body text-xs font-semibold uppercase tracking-[0.22em] text-primary">Espaço reservado para depoimentos reais</p></div>
     </motion.div>
   </section>
 );
@@ -273,7 +273,7 @@ export const Footer = () => (
   <footer className="bg-secondary py-14 text-section-dark-foreground border-t border-section-dark-foreground/10">
     <div className="container max-w-7xl px-6">
       <div className="grid gap-10 md:grid-cols-3 md:items-end">
-        <div><img src={logo} alt="PresenteMente" className="h-20 w-20 object-contain" /><p className="mt-4 font-display text-xl">Alta Performance sem Exaustão para Mulheres que Lideram</p></div>
+        <div><img src={logo} alt="PresenteMente" className="h-auto w-40 object-contain" /><p className="mt-4 font-display text-xl">Alta Performance sem Exaustão para Mulheres que Lideram</p></div>
         <div className="font-body text-sm leading-relaxed text-section-dark-foreground/65"><p className="font-semibold text-section-dark-foreground">Edgard Gonçalves</p><p>Especialista em Alta Performance sem Exaustão</p><p className="mt-3">Psicologia, comportamento e liderança para mulheres que ocupam posições de alta responsabilidade.</p></div>
         <p className="font-body text-xs text-section-dark-foreground/50 md:text-right">© 2026 — Todos os direitos reservados.</p>
       </div>
