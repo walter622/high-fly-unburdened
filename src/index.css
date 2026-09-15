@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes cta-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(var(--gold) / 0.55);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 14px hsl(var(--gold) / 0);
+    transform: scale(1.03);
+  }
+}
+
 @layer base {
   :root {
     /* Brand: deep teal #034255 + green #4da78f + white */
@@ -140,11 +151,13 @@
     background: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold)));
     color: hsl(0 0% 100%);
     letter-spacing: 0.08em;
+    animation: cta-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .cta-button:hover {
     background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
     transform: translateY(-2px);
+    animation: none;
     box-shadow: 0 12px 40px -8px hsl(var(--gold) / 0.45);
   }
 
