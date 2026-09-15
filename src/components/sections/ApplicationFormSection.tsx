@@ -76,7 +76,6 @@ const ApplicationFormSection = () => {
       <div className="container max-w-6xl px-6">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
           <div className="lg:sticky lg:top-12 lg:self-start">
-            <p className="mb-5 font-body text-xs font-semibold uppercase tracking-[0.22em] text-primary">Solicite sua Sessão Diagnóstica</p>
             <h2 className="text-4xl font-medium leading-[1.08] text-section-dark-foreground md:text-5xl">Para preservar a qualidade das conversas e o acompanhamento individual, as sessões são realizadas mediante aplicação.</h2>
             <p className="mt-7 font-body text-lg text-section-dark-foreground/70">Preencha seus dados abaixo.</p>
           </div>
